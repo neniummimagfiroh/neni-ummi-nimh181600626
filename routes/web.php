@@ -23,6 +23,8 @@ Route::get('/kategori_artikel','KategoriArtikelController@index')->name('kategor
 Route::get('/kategori_artikel/create','KategoriArtikelController@create')->name('kategori_artikel.create');
 Route::post('/kategori_artikel','KategoriArtikelController@store')->name('kategori_artikel.store');
 Route::get('/kategori_artikel/{id}','KategoriArtikelController@show')->name('kategori_artikel.show');
+Route::get('/kategori_artikel/{id}/edit','KategoriArtikelController@edit')->name('kategori_artikel.edit');
+Route::patch('/kategori_artikel/{id}','KategoriArtikelController@update')->name('kategori_artikel.update');
 
 Route::get('/artikel','ArtikelController@index')->name('artikel.index');
 Route::get('/artikel/create','ArtikelController@create')->name('artikel.create');
@@ -33,6 +35,8 @@ Route::get('/kategori_berita','kategoriBeritaController@index')->name('kategori_
 Route::get('/kategori_berita/create','KategoriBeritaController@create')->name('kategori_berita.create');
 Route::post('/kategori_berita','KategoriBeritaController@store')->name('kategori_berita.store');
 Route::get('/kategori_berita/{id}','KategoriBeritaController@show')->name('kategori_berita.show');
+Route::get('/kategori_berita/{id}/edit','KategoriBeritaController@edit')->name('kategori_berita.edit');
+Route::patch('/kategori_berita/{id}','KategoriBeritaController@update')->name('kategori_berita.update');
 
 Route::get('/berita','BeritaController@index')->name('berita.index');
 Route::get('/berita/create','BeritaController@create')->name('berita.create');
@@ -43,6 +47,8 @@ Route::get('/kategori_galeri','KategoriGaleriController@index')->name('kategori_
 Route::get('/kategori_galeri/create','KategoriGaleriController@create')->name('kategori_galeri.create');
 Route::post('/kategori_galeri','KategoriGaleriController@store')->name('kategori_galeri.store');
 Route::get('/kategori_galeri/{id}','KategoriGaleriController@show')->name('kategori_galeri.show');
+Route::get('/kategori_galeri/{id}/edit','KategoriGaleriController@edit')->name('kategori_galeri.edit');
+Route::patch('/kategori_galeri/{id}','KategoriGaleriController@update')->name('kategori_galeri.update');
 
 Route::get('/galeri','GaleriController@index')->name('galeri.index');
 Route::get('/galeri/create','GaleriController@create')->name('galeri.create');
@@ -53,6 +59,8 @@ Route::get('/kategori_pengumuman','KategoriPengumumanController@index')->name('k
 Route::get('/kategori_pengumuman/create','KategoriPengumumanController@create')->name('kategori_pengumuman.create');
 Route::post('/kategori_pengumuman','KategoriPengumumanController@store')->name('kategori_pengumuman.store');
 Route::get('/kategori_pengumuman/{id}','KategoriPengumumanController@show')->name('kategori_pengumuman.show');
+Route::get('/kategori_pengumuman/{id}/edit','KategoriPengumumanController@edit')->name('kategori_pengumuman.edit');
+Route::patch('/kategori_pengumuman/{id}','KategoriPengumumanController@update')->name('kategori_pengumuman.update');
 
 Route::get('/pengumuman','PengumumanController@index')->name('pengumuman.index');
 Route::get('/pengumuman/create','PengumumanController@create')->name('pengumuman.create');

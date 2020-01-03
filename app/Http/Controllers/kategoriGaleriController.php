@@ -14,12 +14,18 @@ class kategoriGaleriController extends Controller
         //blade
         return view('kategori_galeri.index',compact('listKategoriGaleri'));
 
+
+
     }
 
     public function show($id){
         //Eloquent
         //$kategoriGaleri=KategoriGaleri::where('id',$id)->first();//select * from kategori_galeri where id=$id limit 1
         $kategoriGaleri=KategoriGaleri::find($id);
+
+        if(empty($kategoriGaleri)){
+            return redirect(route('kategori_galeri.index'));
+        }
 
         return view('kategori_galeri.show',compact('kategoriGaleri'));
     }
@@ -30,6 +36,29 @@ class kategoriGaleriController extends Controller
         $input= $requirest->all();
 
         KategoriGaleri::create($input);
+
+        return redirect(route('kategori_galeri.index'));
+    }
+    public function edit($id){
+        $kategoriGaleri=KategoriGaleri::find($id);
+
+        if(empty($kategoriGaleri)){
+            return redirect(route('kategori_galeri.index'));
+        }
+
+        return view('kategori_galeri.edit', compact('kategoriGaleri'));
+
+    }
+
+    public function update($id,request $requirest){
+        $kategoriGaleri=KategoriGaleri::find($id);
+        $input= $requirest->all();
+
+        if(empty($kategoriGaleri)){
+            return redirect(route('kategori_galeri.index'));
+        }
+
+        $kategoriGaleri->update($input);
 
         return redirect(route('kategori_galeri.index'));
     }
