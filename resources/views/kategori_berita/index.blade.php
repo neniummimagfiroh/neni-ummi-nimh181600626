@@ -35,6 +35,13 @@
                             <a href="{!! route('kategori_berita.edit',[$item->id]) !!}"class="btn btn-sm btn-warning">
                             Ubah
                             </a>
+
+                            {!! Form::open(['route' => ['kategori_berita.destroy', $item->id], 'method'=>'delete']) !!}
+
+                            {!! Form::submit('Hapus',['class'=>'btn btn-sm btn-danger','onclick'=>"return confirm('Apakah anda yakin menghapus data ini')"]); !!}
+
+                            {!! Form::close() !!}
+
                         </td>
                     </tr>
 
